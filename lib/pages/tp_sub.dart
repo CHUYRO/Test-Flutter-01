@@ -119,7 +119,7 @@ class _TpSubState extends State<TpSub> {
       String channelId = (prefs.getString(StorageKeys.CHANNEL_ID) ?? '1403127');
 
       url =
-          'https://api.thingspeak.com/channels/${channelId}/feeds.json?results=1';
+          'https://api.thingspeak.com/channels/$channelId/feeds.json?results=1';
     }
 
     // http request

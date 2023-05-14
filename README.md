@@ -1,16 +1,11 @@
-# flutter_application_1
+Test app que conecta(suscribe) a una base de datos de Thingspeak(matlab) que a su vez es actualizada(publish) via otro proyecto.
 
-A new Flutter project.
+Tasa de actualización del publish = 22 segundos.
 
-## Getting Started
+Tasa de actualización del suscribe = manual...Test automático
 
-This project is a starting point for a Flutter application.
+Test de velocidad en milisegundos incorporado...Test
 
-A few resources to get you started if this is your first Flutter project:
+Enlace canal Thingspeak: https://thingspeak.com/channels/1713237
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+enlace canal Thingspeak procesado: https://thingspeak.com/channels/1725298
