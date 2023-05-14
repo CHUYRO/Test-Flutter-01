@@ -33,7 +33,8 @@ class _TpSubState extends State<TpSub> {
   @override
   void initState() {
     super.initState();
-    timer = Timer.periodic(const Duration(milliseconds: 1), (Timer t) => addValue());
+    timer = Timer.periodic(
+        const Duration(milliseconds: 1), (Timer t) => addValue());
     _loadData();
   }
 
@@ -80,8 +81,8 @@ class _TpSubState extends State<TpSub> {
     if (currentData.status) {
       // Date and time card
       components.add(CardBuilder(dateLogo, 'Fecha', currentData.date));
-      components.add(
-          CardBuilder(timeLogo, 'Hora UTC(+2h Madrid)', currentData.time));
+      components
+          .add(CardBuilder(timeLogo, 'Hora UTC(+2h Madrid)', currentData.time));
       //TEST
       components.add(CardBuilder(
           dateLogo, 'Test tiempo desde inicio', counter.toString()));
@@ -115,8 +116,8 @@ class _TpSubState extends State<TpSub> {
     // get channel id and number of field
     if (!currentData.status) {
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      len = prefs.getInt(StorageKeys.FIELD_COUNT)!;
-      String channelId = (prefs.getString(StorageKeys.CHANNEL_ID) ?? '1403127');
+      len = prefs.getInt(StorageKeys.fieldCount)!;
+      String channelId = (prefs.getString(StorageKeys.channelId) ?? '1403127');
 
       url =
           'https://api.thingspeak.com/channels/$channelId/feeds.json?results=1';

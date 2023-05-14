@@ -18,7 +18,7 @@ class Heading extends StatelessWidget {
 
     // chnage status
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setBool(StorageKeys.SAVE_STATUS, false);
+    prefs.setBool(StorageKeys.saveStatus, false);
 
     // back to setup page
     Navigator.pop(context);
@@ -45,7 +45,7 @@ class Heading extends StatelessWidget {
               ? Column(
                   children: [
                     IconButton(
-                      onPressed: _clearData,                     
+                      onPressed: _clearData,
                       icon: const Icon(Icons.logout),
                     ),
                     const Text('Salir'),
@@ -103,8 +103,8 @@ class CardBuilder extends StatelessWidget {
               title: Text(
                 heading,
                 textScaleFactor: 1.2,
-                style:
-                    const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                    color: Colors.blue, fontWeight: FontWeight.bold),
               ),
             ),
             const Divider(

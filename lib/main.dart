@@ -176,7 +176,7 @@ import 'package:flutter_application_1/pages/setup.dart';
 void main() => runApp(
       MaterialApp(
         title: 'ThingSpeak Test',
-        // initialRoute: "/sub", al carrer bro kesto?
+        // initialRoute: "/sub", //al carrer bro kesto?
         routes: {
           "/": (context) => const Setup(),
           "/setup": (context) => const Setup(),

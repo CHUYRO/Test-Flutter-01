@@ -28,7 +28,7 @@ class _SetupState extends State<Setup> {
   // chnage page if data saved
   void _changePage() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool? status = prefs.getBool(StorageKeys.SAVE_STATUS);
+    bool? status = prefs.getBool(StorageKeys.saveStatus);
     if (status != null && status) {
       Navigator.pop(context);
       Navigator.pushNamed(context, '/sub');
@@ -44,10 +44,9 @@ class _SetupState extends State<Setup> {
 
       // save data
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString(StorageKeys.CHANNEL_ID, channelTextController.text);
-      prefs.setInt(
-          StorageKeys.FIELD_COUNT, int.parse(fieldTextController.text));
-      prefs.setBool(StorageKeys.SAVE_STATUS, true);
+      prefs.setString(StorageKeys.channelId, channelTextController.text);
+      prefs.setInt(StorageKeys.fieldCount, int.parse(fieldTextController.text));
+      prefs.setBool(StorageKeys.saveStatus, true);
 
       // change page
       Navigator.pop(context);
@@ -61,11 +60,11 @@ class _SetupState extends State<Setup> {
 
   // void _readData() async {
   //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   String? v = prefs.getString(StorageKeys.CHANNEL_ID);
+  //   String? v = prefs.getString(StorageKeys.channelId);
   //   print(v);
-  //   v = prefs.getString(StorageKeys.FIELD_COUNT);
+  //   v = prefs.getString(StorageKeys.fieldCount);
   //   print(v);
-  //   bool? b = prefs.getBool(StorageKeys.SAVE_STATUS);
+  //   bool? b = prefs.getBool(StorageKeys.saveStatus);
 
   //   if (b == null) {
   //     print('bool null');
@@ -78,11 +77,11 @@ class _SetupState extends State<Setup> {
   // void _clearData() async {
   //   SharedPreferences prefs = await SharedPreferences.getInstance();
   //   //Remove String
-  //   prefs.remove(StorageKeys.CHANNEL_ID);
+  //   prefs.remove(StorageKeys.channelId);
   //   //Remove bool
-  //   prefs.remove(StorageKeys.FIELD_COUNT);
+  //   prefs.remove(StorageKeys.fieldCount);
   //   //Remove int
-  //   prefs.remove(StorageKeys.SAVE_STATUS);
+  //   prefs.remove(StorageKeys.saveStatus);
   // }
 
   @override
